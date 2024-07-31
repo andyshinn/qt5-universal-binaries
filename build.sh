@@ -11,7 +11,7 @@ QT_PREFIX="/usr/local/qt-$QT_VERSION"
 export DEVELOPER_DIR="/Applications/Xcode_14.3.1.app/Contents/Developer"
 
 # Download Qt sources
-wget -O qt.tar.xz "$QT_DOWNLOAD_URL"
+wget -q -O qt.tar.xz "$QT_DOWNLOAD_URL"
 tar -xf qt.tar.xz
 
 # Build Qt
