@@ -8,7 +8,7 @@ QT_DOWNLOAD_URL="https://download.qt.io/official_releases/qt/$QT_VERSION_MAJOR/$
 QT_FOLDER="qt-everywhere-src-$QT_VERSION"
 QT_PREFIX="/usr/local/qt-$QT_VERSION"
 
-export DEVELOPER_DIR="/Applications/Xcode_14.3.1.app/Contents/Developer"
+export DEVELOPER_DIR="/Applications/Xcode_14.1.app/Contents/Developer"
 
 # Download Qt sources
 wget -q -O qt.tar.xz "$QT_DOWNLOAD_URL"
