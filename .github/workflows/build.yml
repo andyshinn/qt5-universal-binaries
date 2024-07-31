@@ -1,0 +1,36 @@
+name: Build Qt 5 macOS Universal Binaries
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+
+      - uses: actions/checkout@v4.1.7
+
+      - name: Run a multi-line script
+        run: ./build.sh
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4.3.4
+        with:
+          name: qt-mac-universal
+          path: qt-mac-universal.tar.gz
+
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v2.0.8
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          files: qt-mac-universal.tar.gz
